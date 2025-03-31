@@ -105,9 +105,8 @@ public class mainui extends javax.swing.JFrame {
         reportsBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(0, 0));
-        setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1600, 950));
+        setMinimumSize(new java.awt.Dimension(1440, 900));
+        setPreferredSize(new java.awt.Dimension(1440, 900));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -126,18 +125,18 @@ public class mainui extends javax.swing.JFrame {
         batstateuLbl1.setFont(new java.awt.Font("Serif", 1, 60)); // NOI18N
         batstateuLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         batstateuLbl1.setText("BATANGAS STATE UNIVERSITY");
-        maroonbckgrnd.add(batstateuLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 1100, 50));
+        maroonbckgrnd.add(batstateuLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 1100, 50));
 
         tneuLbl.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         tneuLbl.setForeground(new java.awt.Color(153, 0, 0));
         tneuLbl.setText("The National Engineering University");
-        maroonbckgrnd.add(tneuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
+        maroonbckgrnd.add(tneuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
 
         batstateuLbl.setBackground(new java.awt.Color(255, 255, 255));
         batstateuLbl.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         batstateuLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         batstateuLbl.setText("ARASOF - Nasugbu Campus");
-        maroonbckgrnd.add(batstateuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 490, 50));
+        maroonbckgrnd.add(batstateuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 490, 50));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/photo.png"))); // NOI18N
         maroonbckgrnd.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1620, 180));
@@ -152,18 +151,18 @@ public class mainui extends javax.swing.JFrame {
         courseTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         courseTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         courseTXT.setText("Courses");
-        coursesTotalPanel.add(courseTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 160, 30));
+        coursesTotalPanel.add(courseTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 160, 30));
 
-        homePanel.add(coursesTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 690, 430));
+        homePanel.add(coursesTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 70, 550, 410));
 
         studentsTotalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         studentTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         studentTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         studentTXT.setText("Students");
-        studentsTotalPanel.add(studentTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, 40));
+        studentsTotalPanel.add(studentTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, 40));
 
-        homePanel.add(studentsTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 680, 430));
+        homePanel.add(studentsTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 550, 410));
 
         homeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         homeTXT.setText("Home");
@@ -191,7 +190,7 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        profilePanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 770, 400));
+        profilePanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 660, 330));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,44 +208,44 @@ public class mainui extends javax.swing.JFrame {
 
         imagePanel.setBackground(new java.awt.Color(102, 102, 102));
         imagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        profilePanel2.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 190, 180));
+        profilePanel2.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 190, 180));
 
-        srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         srcodeTXT.setText("SR-Code:");
-        profilePanel2.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        profilePanel2.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         addressTXT.setText("Address:");
-        profilePanel2.add(addressTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        profilePanel2.add(addressTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
-        emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         emailTXT.setText("Email:");
-        profilePanel2.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 90, -1));
+        profilePanel2.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 90, -1));
 
-        programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         programTXT.setText("Program:");
-        profilePanel2.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        profilePanel2.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
 
         profileTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 31)); // NOI18N
         profileTXT.setText("Students Information");
         profilePanel2.add(profileTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         nameTXT.setText("Name:");
-        profilePanel2.add(nameTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
-        profilePanel2.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 150, -1));
-        profilePanel2.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 340, -1));
+        profilePanel2.add(nameTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
+        profilePanel2.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 150, -1));
+        profilePanel2.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 340, -1));
 
         addressFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressFldActionPerformed(evt);
             }
         });
-        profilePanel2.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 340, -1));
-        profilePanel2.add(programFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 340, -1));
-        profilePanel2.add(emailFld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 340, -1));
+        profilePanel2.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 340, -1));
+        profilePanel2.add(programFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 340, -1));
+        profilePanel2.add(emailFld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 340, -1));
 
-        profilePanel.add(profilePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, 670, 560));
+        profilePanel.add(profilePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 640, 530));
 
         addBtn.setBackground(new java.awt.Color(0, 255, 0));
         addBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
@@ -256,12 +255,12 @@ public class mainui extends javax.swing.JFrame {
                 addBtnActionPerformed(evt);
             }
         });
-        profilePanel.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 120, -1));
+        profilePanel.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 120, -1));
 
         deleteBtn.setBackground(new java.awt.Color(255, 51, 0));
         deleteBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         deleteBtn.setText("Delete");
-        profilePanel.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, 120, -1));
+        profilePanel.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 120, -1));
 
         profileTXT1.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         profileTXT1.setText("Students Profile");
@@ -285,7 +284,7 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable2);
 
-        coursesPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 620, 410));
+        coursesPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 620, 380));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -300,22 +299,22 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable3);
 
-        coursesPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 680, 410));
+        coursesPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 610, 380));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        coursesPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 460, -1));
+        coursesPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 460, -1));
 
         searchTxt1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         searchTxt1.setText("Search:");
-        coursesPanel.add(searchTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
+        coursesPanel.add(searchTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
         searchBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         searchBtn.setText("Search");
-        coursesPanel.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, -1, -1));
+        coursesPanel.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, -1, -1));
 
         coursesTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         coursesTXT.setText("Courses");
@@ -324,12 +323,12 @@ public class mainui extends javax.swing.JFrame {
         addBtn1.setBackground(new java.awt.Color(0, 255, 0));
         addBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         addBtn1.setText("Add");
-        coursesPanel.add(addBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 120, -1));
+        coursesPanel.add(addBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 120, -1));
 
         deleteBtn1.setBackground(new java.awt.Color(255, 51, 0));
         deleteBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         deleteBtn1.setText("Delete");
-        coursesPanel.add(deleteBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 120, -1));
+        coursesPanel.add(deleteBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 120, -1));
 
         adminTabbedpane.addTab("Courses", coursesPanel);
 
@@ -349,7 +348,7 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable4);
 
-        curriculumPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 690, 400));
+        curriculumPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 570, 330));
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -364,30 +363,30 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable5);
 
-        curriculumPanel.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 150, 680, 400));
+        curriculumPanel.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 600, 330));
 
         searchTxt2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         searchTxt2.setText("Search:");
-        curriculumPanel.add(searchTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        curriculumPanel.add(searchTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
-        curriculumPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 370, -1));
+        curriculumPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 370, -1));
 
         searchBtn3.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         searchBtn3.setText("Search");
-        curriculumPanel.add(searchBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, -1, -1));
+        curriculumPanel.add(searchBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, -1, -1));
 
         printcurriculumBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         printcurriculumBtn.setText("PRINT CURRICULUM");
-        curriculumPanel.add(printcurriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 210, -1));
+        curriculumPanel.add(printcurriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, 210, -1));
 
         printblankBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         printblankBtn.setText("PRINT BLANK CURRICULUM");
-        curriculumPanel.add(printblankBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 270, -1));
+        curriculumPanel.add(printblankBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 80, 270, -1));
 
         curriculumTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         curriculumTXT.setText("Curriculum");
@@ -396,12 +395,12 @@ public class mainui extends javax.swing.JFrame {
         addBtn2.setBackground(new java.awt.Color(0, 255, 0));
         addBtn2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         addBtn2.setText("Add");
-        curriculumPanel.add(addBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 120, -1));
+        curriculumPanel.add(addBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 120, -1));
 
         deleteBtn2.setBackground(new java.awt.Color(255, 51, 0));
         deleteBtn2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         deleteBtn2.setText("Delete");
-        curriculumPanel.add(deleteBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 560, 120, -1));
+        curriculumPanel.add(deleteBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 120, -1));
 
         adminTabbedpane.addTab("Curriculums", curriculumPanel);
 
@@ -421,7 +420,7 @@ public class mainui extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(jTable6);
 
-        gradesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 1070, 530));
+        gradesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 1070, 510));
 
         gradesTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         gradesTXT.setText("Grades");
@@ -432,7 +431,7 @@ public class mainui extends javax.swing.JFrame {
         reportsPanel.setBackground(new java.awt.Color(204, 204, 204));
         reportsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        reportsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        reportsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         reportsTXT.setText("Reports");
         reportsPanel.add(reportsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
@@ -441,13 +440,13 @@ public class mainui extends javax.swing.JFrame {
         settingsPanel.setBackground(new java.awt.Color(204, 204, 204));
         settingsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        settingsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        settingsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         settingsTXT.setText("Settings");
         settingsPanel.add(settingsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         adminTabbedpane.addTab("Settings", settingsPanel);
 
-        adminPanel.add(adminTabbedpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 160, 1930, 630));
+        adminPanel.add(adminTabbedpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 160, 1930, 580));
 
         buttonsPanel.setBackground(new java.awt.Color(153, 153, 153));
         buttonsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -460,7 +459,7 @@ public class mainui extends javax.swing.JFrame {
                 settingsBtnActionPerformed(evt);
             }
         });
-        buttonsPanel.add(settingsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 50, 170, 40));
+        buttonsPanel.add(settingsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 50, 170, 40));
 
         homeBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         homeBtn1.setText("Home");
@@ -470,7 +469,7 @@ public class mainui extends javax.swing.JFrame {
                 homeBtn1ActionPerformed(evt);
             }
         });
-        buttonsPanel.add(homeBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 140, 40));
+        buttonsPanel.add(homeBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 140, 40));
 
         profileBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         profileBtn.setText("Students Profile");
@@ -480,7 +479,7 @@ public class mainui extends javax.swing.JFrame {
                 profileBtnActionPerformed(evt);
             }
         });
-        buttonsPanel.add(profileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 200, 40));
+        buttonsPanel.add(profileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, 40));
 
         coursesBtb.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         coursesBtb.setText("Courses");
@@ -490,7 +489,7 @@ public class mainui extends javax.swing.JFrame {
                 coursesBtbActionPerformed(evt);
             }
         });
-        buttonsPanel.add(coursesBtb, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 170, 40));
+        buttonsPanel.add(coursesBtb, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 170, 40));
 
         curriculumBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         curriculumBtn.setText("Curriculum");
@@ -500,7 +499,7 @@ public class mainui extends javax.swing.JFrame {
                 curriculumBtnActionPerformed(evt);
             }
         });
-        buttonsPanel.add(curriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 190, 40));
+        buttonsPanel.add(curriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 190, 40));
 
         gradesBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         gradesBtn.setText("Grades");
@@ -510,7 +509,7 @@ public class mainui extends javax.swing.JFrame {
                 gradesBtnActionPerformed(evt);
             }
         });
-        buttonsPanel.add(gradesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, 170, 40));
+        buttonsPanel.add(gradesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 50, 170, 40));
 
         reportsBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         reportsBtn1.setText("Reports");
@@ -520,13 +519,13 @@ public class mainui extends javax.swing.JFrame {
                 reportsBtn1ActionPerformed(evt);
             }
         });
-        buttonsPanel.add(reportsBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 50, 160, 40));
+        buttonsPanel.add(reportsBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 50, 160, 40));
 
-        adminPanel.add(buttonsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 790, 1920, 130));
+        adminPanel.add(buttonsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 740, 1920, 130));
 
         jScrollPane1.setViewportView(adminPanel);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1010));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1010));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
