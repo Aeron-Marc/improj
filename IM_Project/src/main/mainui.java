@@ -26,90 +26,535 @@ public class mainui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        adminPanel = new javax.swing.JPanel();
+        tneuLbl = new javax.swing.JLabel();
+        bsulogo = new javax.swing.JLabel();
+        batstateuLbl = new javax.swing.JLabel();
+        batstateuLbl1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
+        maroonbckgrnd = new javax.swing.JPanel();
+        adminTabbedpane = new javax.swing.JTabbedPane();
+        homePanel = new javax.swing.JPanel();
+        studentsTotalPanel = new javax.swing.JPanel();
+        studentTXT = new javax.swing.JLabel();
+        coursesTotalPanel = new javax.swing.JPanel();
+        courseTXT = new javax.swing.JLabel();
+        homeTXT = new javax.swing.JLabel();
+        profilePanel = new javax.swing.JPanel();
+        searchTxt = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        searchBtn1 = new javax.swing.JButton();
+        profilePanel2 = new javax.swing.JPanel();
+        imagePanel = new javax.swing.JPanel();
+        srcodeTXT = new javax.swing.JLabel();
+        addressTXT = new javax.swing.JLabel();
+        emailTXT = new javax.swing.JLabel();
+        programTXT = new javax.swing.JLabel();
+        profileTXT = new javax.swing.JLabel();
+        nameTXT = new javax.swing.JLabel();
+        addBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        profileTXT1 = new javax.swing.JLabel();
+        coursesPanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jTextField2 = new javax.swing.JTextField();
+        searchTxt1 = new javax.swing.JLabel();
+        searchBtn = new javax.swing.JButton();
+        coursesTXT = new javax.swing.JLabel();
+        addBtn1 = new javax.swing.JButton();
+        deleteBtn1 = new javax.swing.JButton();
+        curriculumPanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        searchTxt2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        searchBtn3 = new javax.swing.JButton();
+        printcurriculumBtn = new javax.swing.JButton();
+        printblankBtn = new javax.swing.JButton();
+        curriculumTXT = new javax.swing.JLabel();
+        addBtn2 = new javax.swing.JButton();
+        deleteBtn2 = new javax.swing.JButton();
+        gradesPanel = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        gradesTXT = new javax.swing.JLabel();
+        reportsPanel = new javax.swing.JPanel();
+        reportsTXT = new javax.swing.JLabel();
+        settingsPanel = new javax.swing.JPanel();
+        settingsTXT = new javax.swing.JLabel();
+        buttonsPanel = new javax.swing.JPanel();
+        settingsBtn = new javax.swing.JButton();
+        homeBtn1 = new javax.swing.JButton();
+        profileBtn = new javax.swing.JButton();
+        coursesBtb = new javax.swing.JButton();
+        curriculumBtn = new javax.swing.JButton();
+        gradesBtn = new javax.swing.JButton();
+        reportsBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1070));
+        setMinimumSize(new java.awt.Dimension(1220, 800));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(java.awt.Color.lightGray);
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        adminPanel.setMaximumSize(new java.awt.Dimension(1920, 1070));
+        adminPanel.setMinimumSize(new java.awt.Dimension(1220, 800));
+        adminPanel.setPreferredSize(new java.awt.Dimension(0, 0));
+        adminPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tneuLbl.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        tneuLbl.setForeground(new java.awt.Color(153, 0, 0));
+        tneuLbl.setText("The National Engineering University");
+        adminPanel.add(tneuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel2.setText("The National Engineering University");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, 40));
+        bsulogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/logo bsu.png"))); // NOI18N
+        adminPanel.add(bsulogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel3.setText("ARASOF - Nasugbu Campus");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, 30));
+        batstateuLbl.setBackground(new java.awt.Color(255, 255, 255));
+        batstateuLbl.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        batstateuLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        batstateuLbl.setText("ARASOF - Nasugbu Campus");
+        adminPanel.add(batstateuLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 1430, 160));
 
-        jLabel5.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel5.setText("BATANGAS STATE UNVERSITY");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, 30));
+        batstateuLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        batstateuLbl1.setFont(new java.awt.Font("Serif", 1, 80)); // NOI18N
+        batstateuLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        batstateuLbl1.setText("BATANGAS STATE UNIVERSITY");
+        adminPanel.add(batstateuLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -30, 1430, 160));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/header.png"))); // NOI18N
-        jLabel4.setLabelFor(jPanel4);
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, -100, -1, -1));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/photo.png"))); // NOI18N
+        adminPanel.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 190));
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 120));
+        maroonbckgrnd.setBackground(new java.awt.Color(128, 0, 0));
+        maroonbckgrnd.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        adminPanel.add(maroonbckgrnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 230));
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+        homePanel.setBackground(new java.awt.Color(204, 204, 204));
+        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("jButton1");
+        studentsTotalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jButton1)
-                .addContainerGap(1153, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        studentTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        studentTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        studentTXT.setText("Students");
+        studentsTotalPanel.add(studentTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, -1, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1280, 70));
+        homePanel.add(studentsTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 780, 510));
 
-        jTabbedPane1.setBackground(java.awt.Color.lightGray);
+        coursesTotalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(java.awt.Color.lightGray);
+        courseTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        courseTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        courseTXT.setText("Courses");
+        coursesTotalPanel.add(courseTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 160, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1295, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        homePanel.add(coursesTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 90, 770, 510));
 
-        jTabbedPane1.addTab("tab1", jPanel2);
+        homeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        homeTXT.setText("Home");
+        homePanel.add(homeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jPanel3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 90, 1300, 600));
+        adminTabbedpane.addTab("Home", homePanel);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        profilePanel.setBackground(new java.awt.Color(204, 204, 204));
+        profilePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        searchTxt.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        searchTxt.setText("Search:");
+        profilePanel.add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "SR-Code", "Name", "Address", "Email", "Program"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        profilePanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 790, 480));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        profilePanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 370, -1));
+
+        searchBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        searchBtn1.setText("Search");
+        profilePanel.add(searchBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, -1));
+
+        profilePanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        profilePanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imagePanel.setBackground(new java.awt.Color(102, 102, 102));
+        imagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        profilePanel2.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 190, 180));
+
+        srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        srcodeTXT.setText("SR-Code:");
+        profilePanel2.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        addressTXT.setText("Address:");
+        profilePanel2.add(addressTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+
+        emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        emailTXT.setText("Email:");
+        profilePanel2.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 90, -1));
+
+        programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        programTXT.setText("Program:");
+        profilePanel2.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+
+        profileTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        profileTXT.setText("Students Information");
+        profilePanel2.add(profileTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        nameTXT.setText("Name:");
+        profilePanel2.add(nameTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+
+        profilePanel.add(profilePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 750, 620));
+
+        addBtn.setBackground(new java.awt.Color(0, 255, 0));
+        addBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        addBtn.setText("Add");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+        profilePanel.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 620, 120, -1));
+
+        deleteBtn.setBackground(new java.awt.Color(255, 51, 0));
+        deleteBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        deleteBtn.setText("Delete");
+        profilePanel.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 620, 120, -1));
+
+        profileTXT1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        profileTXT1.setText("Students Profile");
+        profilePanel.add(profileTXT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        adminTabbedpane.addTab("StudentsProfile", profilePanel);
+
+        coursesPanel.setBackground(new java.awt.Color(204, 204, 204));
+        coursesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
+        coursesPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 140, 680, 470));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable3);
+
+        coursesPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 730, 470));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        coursesPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 460, -1));
+
+        searchTxt1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        searchTxt1.setText("Search:");
+        coursesPanel.add(searchTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+
+        searchBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        searchBtn.setText("Search");
+        coursesPanel.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, -1, -1));
+
+        coursesTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        coursesTXT.setText("Courses");
+        coursesPanel.add(coursesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        addBtn1.setBackground(new java.awt.Color(0, 255, 0));
+        addBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        addBtn1.setText("Add");
+        coursesPanel.add(addBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 120, -1));
+
+        deleteBtn1.setBackground(new java.awt.Color(255, 51, 0));
+        deleteBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        deleteBtn1.setText("Delete");
+        coursesPanel.add(deleteBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 620, 120, -1));
+
+        adminTabbedpane.addTab("Courses", coursesPanel);
+
+        curriculumPanel.setBackground(new java.awt.Color(204, 204, 204));
+        curriculumPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable4);
+
+        curriculumPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 730, 460));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable5);
+
+        curriculumPanel.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 150, 720, 460));
+
+        searchTxt2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        searchTxt2.setText("Search:");
+        curriculumPanel.add(searchTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        curriculumPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 370, -1));
+
+        searchBtn3.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        searchBtn3.setText("Search");
+        curriculumPanel.add(searchBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, -1, -1));
+
+        printcurriculumBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        printcurriculumBtn.setText("PRINT CURRICULUM");
+        curriculumPanel.add(printcurriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 210, -1));
+
+        printblankBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        printblankBtn.setText("PRINT BLANK CURRICULUM");
+        curriculumPanel.add(printblankBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 90, 270, -1));
+
+        curriculumTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        curriculumTXT.setText("Curriculum");
+        curriculumPanel.add(curriculumTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        addBtn2.setBackground(new java.awt.Color(0, 255, 0));
+        addBtn2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        addBtn2.setText("Add");
+        curriculumPanel.add(addBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 120, -1));
+
+        deleteBtn2.setBackground(new java.awt.Color(255, 51, 0));
+        deleteBtn2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        deleteBtn2.setText("Delete");
+        curriculumPanel.add(deleteBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 620, 120, -1));
+
+        adminTabbedpane.addTab("Curriculums", curriculumPanel);
+
+        gradesPanel.setBackground(new java.awt.Color(204, 204, 204));
+        gradesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable6);
+
+        gradesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 1320, 610));
+
+        gradesTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        gradesTXT.setText("Grades");
+        gradesPanel.add(gradesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        adminTabbedpane.addTab("tab7", gradesPanel);
+
+        reportsPanel.setBackground(new java.awt.Color(204, 204, 204));
+        reportsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        reportsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        reportsTXT.setText("Reports");
+        reportsPanel.add(reportsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        adminTabbedpane.addTab("Reports", reportsPanel);
+
+        settingsPanel.setBackground(new java.awt.Color(204, 204, 204));
+        settingsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        settingsTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        settingsTXT.setText("Settings");
+        settingsPanel.add(settingsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        adminTabbedpane.addTab("Settings", settingsPanel);
+
+        adminPanel.add(adminTabbedpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 190, 1930, 690));
+
+        buttonsPanel.setBackground(new java.awt.Color(153, 153, 153));
+        buttonsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        settingsBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        settingsBtn.setText("Settings");
+        settingsBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        settingsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsBtnActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(settingsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 50, 180, 40));
+
+        homeBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        homeBtn1.setText("Home");
+        homeBtn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        homeBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtn1ActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(homeBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 170, 40));
+
+        profileBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        profileBtn.setText("Students Profile");
+        profileBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        profileBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileBtnActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(profileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 220, 40));
+
+        coursesBtb.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        coursesBtb.setText("Courses");
+        coursesBtb.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        coursesBtb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coursesBtbActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(coursesBtb, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 210, 40));
+
+        curriculumBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        curriculumBtn.setText("Curriculum");
+        curriculumBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        curriculumBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                curriculumBtnActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(curriculumBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 220, 40));
+
+        gradesBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        gradesBtn.setText("Grades");
+        gradesBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        gradesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gradesBtnActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(gradesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 50, 210, 40));
+
+        reportsBtn1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        reportsBtn1.setText("Reports");
+        reportsBtn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reportsBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportsBtn1ActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(reportsBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 50, 210, 40));
+
+        adminPanel.add(buttonsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 880, 1920, 130));
+
+        jScrollPane1.setViewportView(adminPanel);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1010));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void settingsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsBtnActionPerformed
+        adminTabbedpane.setSelectedComponent(settingsPanel);
+    }//GEN-LAST:event_settingsBtnActionPerformed
+
+    private void homeBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtn1ActionPerformed
+        adminTabbedpane.setSelectedComponent(homePanel);
+    }//GEN-LAST:event_homeBtn1ActionPerformed
+
+    private void profileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileBtnActionPerformed
+        adminTabbedpane.setSelectedComponent(profilePanel);
+    }//GEN-LAST:event_profileBtnActionPerformed
+
+    private void coursesBtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coursesBtbActionPerformed
+        adminTabbedpane.setSelectedComponent(coursesPanel);
+    }//GEN-LAST:event_coursesBtbActionPerformed
+
+    private void curriculumBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curriculumBtnActionPerformed
+        adminTabbedpane.setSelectedComponent(curriculumPanel);
+    }//GEN-LAST:event_curriculumBtnActionPerformed
+
+    private void gradesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradesBtnActionPerformed
+        adminTabbedpane.setSelectedComponent(gradesPanel);
+    }//GEN-LAST:event_gradesBtnActionPerformed
+
+    private void reportsBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportsBtn1ActionPerformed
+        adminTabbedpane.setSelectedComponent(reportsPanel);
+    }//GEN-LAST:event_reportsBtn1ActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,15 +592,77 @@ public class mainui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton addBtn1;
+    private javax.swing.JButton addBtn2;
+    private javax.swing.JLabel addressTXT;
+    private javax.swing.JPanel adminPanel;
+    private javax.swing.JTabbedPane adminTabbedpane;
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel batstateuLbl;
+    private javax.swing.JLabel batstateuLbl1;
+    private javax.swing.JLabel bsulogo;
+    private javax.swing.JPanel buttonsPanel;
+    private javax.swing.JLabel courseTXT;
+    private javax.swing.JButton coursesBtb;
+    private javax.swing.JPanel coursesPanel;
+    private javax.swing.JLabel coursesTXT;
+    private javax.swing.JPanel coursesTotalPanel;
+    private javax.swing.JButton curriculumBtn;
+    private javax.swing.JPanel curriculumPanel;
+    private javax.swing.JLabel curriculumTXT;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JButton deleteBtn1;
+    private javax.swing.JButton deleteBtn2;
+    private javax.swing.JLabel emailTXT;
+    private javax.swing.JButton gradesBtn;
+    private javax.swing.JPanel gradesPanel;
+    private javax.swing.JLabel gradesTXT;
+    private javax.swing.JButton homeBtn1;
+    private javax.swing.JPanel homePanel;
+    private javax.swing.JLabel homeTXT;
+    private javax.swing.JPanel imagePanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel maroonbckgrnd;
+    private javax.swing.JLabel nameTXT;
+    private javax.swing.JButton printblankBtn;
+    private javax.swing.JButton printcurriculumBtn;
+    private javax.swing.JButton profileBtn;
+    private javax.swing.JPanel profilePanel;
+    private javax.swing.JPanel profilePanel2;
+    private javax.swing.JLabel profileTXT;
+    private javax.swing.JLabel profileTXT1;
+    private javax.swing.JLabel programTXT;
+    private javax.swing.JButton reportsBtn1;
+    private javax.swing.JPanel reportsPanel;
+    private javax.swing.JLabel reportsTXT;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JButton searchBtn1;
+    private javax.swing.JButton searchBtn3;
+    private javax.swing.JLabel searchTxt;
+    private javax.swing.JLabel searchTxt1;
+    private javax.swing.JLabel searchTxt2;
+    private javax.swing.JButton settingsBtn;
+    private javax.swing.JPanel settingsPanel;
+    private javax.swing.JLabel settingsTXT;
+    private javax.swing.JLabel srcodeTXT;
+    private javax.swing.JLabel studentTXT;
+    private javax.swing.JPanel studentsTotalPanel;
+    private javax.swing.JLabel tneuLbl;
     // End of variables declaration//GEN-END:variables
 }

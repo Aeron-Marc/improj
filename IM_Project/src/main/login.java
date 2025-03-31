@@ -27,28 +27,25 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        loginTxt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jButton2 = new javax.swing.JButton();
+        signupBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jPanel1 = new javax.swing.JPanel();
+        loginTxt1 = new javax.swing.JLabel();
+        batstateuTXT = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        loginTxt.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        loginTxt.setText("Login");
-        jPanel2.add(loginTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         jLabel1.setText("Password:");
@@ -65,9 +62,9 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 330, -1));
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jButton1.setText("Login");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
+        loginBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        loginBtn.setText("Login");
+        jPanel2.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
 
         jCheckBox1.setText("Show Password");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,54 +74,41 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, 20));
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 0, 0));
-        jButton2.setText("Sign up");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        signupBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        signupBtn.setForeground(new java.awt.Color(204, 0, 0));
+        signupBtn.setText("Sign up");
+        signupBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                signupBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
+        jPanel2.add(signupBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
         jLabel3.setText("I don't have an account?");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 140, 30));
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 330, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 460, 530));
+        loginTxt1.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        loginTxt1.setText("Please Login");
+        jPanel2.add(loginTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, -1));
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 450, 560));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/logo bsu.png"))); // NOI18N
+        batstateuTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        batstateuTXT.setForeground(new java.awt.Color(255, 255, 255));
+        batstateuTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        batstateuTXT.setText("BATANGAS STATE UNIVERSITY");
+        getContentPane().add(batstateuTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 42, 250, 20));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Lagyan nyo ng text dito");
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("The National Engineering University");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 230, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel4)
-                .addGap(55, 55, 55)
-                .addComponent(jLabel5)
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(70, 70, 70))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 170));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/background lam.png"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,9 +121,9 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_signupBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,18 +161,18 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel batstateuTXT;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel loginTxt;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JLabel loginTxt1;
+    private javax.swing.JButton signupBtn;
     // End of variables declaration//GEN-END:variables
 }

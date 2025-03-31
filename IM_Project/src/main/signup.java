@@ -127,7 +127,7 @@ public class signup extends javax.swing.JFrame {
 
         getContentPane().add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 520, 640));
 
-        background.setBackground(new java.awt.Color(204, 0, 0));
+        background.setBackground(new java.awt.Color(128, 0, 0));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/logo 2.png"))); // NOI18N
