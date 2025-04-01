@@ -44,6 +44,10 @@ public class AddStudent extends javax.swing.JFrame {
         imagechooserbtn = new javax.swing.JButton();
         emailTXT = new javax.swing.JLabel();
         emailFld = new javax.swing.JTextField();
+        srcodeTXT1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        srcodeTXT2 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,7 +86,7 @@ public class AddStudent extends javax.swing.JFrame {
 
         programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         programTXT.setText("Program:");
-        jPanel1.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+        jPanel1.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
         nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         nameTXT.setText("Name:");
@@ -90,9 +94,15 @@ public class AddStudent extends javax.swing.JFrame {
 
         srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         srcodeTXT.setText("SR-Code:");
-        jPanel1.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
-        jPanel1.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 160, 150, -1));
-        jPanel1.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 340, -1));
+        jPanel1.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
+
+        srcodeFld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                srcodeFldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 150, -1));
+        jPanel1.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 250, -1));
 
         addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         addressTXT.setText("Address:");
@@ -103,7 +113,7 @@ public class AddStudent extends javax.swing.JFrame {
                 addressFldActionPerformed(evt);
             }
         });
-        jPanel1.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, 340, -1));
+        jPanel1.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 340, -1));
 
         saveBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         saveBtn.setText("Save");
@@ -125,7 +135,7 @@ public class AddStudent extends javax.swing.JFrame {
 
         programcombobox.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         programcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", " ", " ", " ", " " }));
-        jPanel1.add(programcombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 150, 30));
+        jPanel1.add(programcombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 150, 30));
 
         imagelbl.setBackground(new java.awt.Color(102, 102, 102));
         imagelbl.setForeground(new java.awt.Color(255, 255, 204));
@@ -144,7 +154,23 @@ public class AddStudent extends javax.swing.JFrame {
         emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         emailTXT.setText("Email:");
         jPanel1.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 590, -1, -1));
-        jPanel1.add(emailFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 340, -1));
+        jPanel1.add(emailFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 340, -1));
+
+        srcodeTXT1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        srcodeTXT1.setText("Sex:");
+        jPanel1.add(srcodeTXT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, 30));
+
+        jComboBox1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "1st", "2nd", "3rd", "4th" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 150, -1));
+
+        srcodeTXT2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        srcodeTXT2.setText("Year:");
+        jPanel1.add(srcodeTXT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, 30));
+
+        jComboBox2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Male", "Female", " " }));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 820));
 
@@ -166,6 +192,10 @@ public class AddStudent extends javax.swing.JFrame {
     private void addressFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addressFldActionPerformed
+
+    private void srcodeFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srcodeFldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_srcodeFldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,6 +243,8 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JLabel emailTXT;
     private javax.swing.JButton imagechooserbtn;
     private javax.swing.JLabel imagelbl;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField nameFld;
@@ -223,5 +255,7 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JButton saveBtn;
     private javax.swing.JTextField srcodeFld;
     private javax.swing.JLabel srcodeTXT;
+    private javax.swing.JLabel srcodeTXT1;
+    private javax.swing.JLabel srcodeTXT2;
     // End of variables declaration//GEN-END:variables
 }

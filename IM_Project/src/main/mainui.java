@@ -60,6 +60,10 @@ public class mainui extends javax.swing.JFrame {
         addressFld = new javax.swing.JTextField();
         programFld = new javax.swing.JTextField();
         emailFld1 = new javax.swing.JTextField();
+        srcodeFld1 = new javax.swing.JTextField();
+        srcodeFld2 = new javax.swing.JTextField();
+        srcodeTXT1 = new javax.swing.JLabel();
+        srcodeTXT2 = new javax.swing.JLabel();
         addBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         profileTXT1 = new javax.swing.JLabel();
@@ -110,8 +114,8 @@ public class mainui extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminPanel.setMaximumSize(new java.awt.Dimension(1920, 1070));
-        adminPanel.setMinimumSize(new java.awt.Dimension(1220, 800));
+        adminPanel.setMaximumSize(new java.awt.Dimension(1440, 900));
+        adminPanel.setMinimumSize(new java.awt.Dimension(1440, 900));
         adminPanel.setPreferredSize(new java.awt.Dimension(0, 0));
         adminPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -179,13 +183,13 @@ public class mainui extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "SR-Code", "Name", "Address", "Email", "Program"
+                "SR-Code", "Name", "Address", "Email", "Program", "Year", "Sex"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -210,42 +214,52 @@ public class mainui extends javax.swing.JFrame {
         imagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         profilePanel2.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 190, 180));
 
-        srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        srcodeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         srcodeTXT.setText("SR-Code:");
-        profilePanel2.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        profilePanel2.add(srcodeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        addressTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         addressTXT.setText("Address:");
-        profilePanel2.add(addressTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        profilePanel2.add(addressTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
-        emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        emailTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         emailTXT.setText("Email:");
-        profilePanel2.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 90, -1));
+        profilePanel2.add(emailTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 90, -1));
 
-        programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        programTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         programTXT.setText("Program:");
-        profilePanel2.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
+        profilePanel2.add(programTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
         profileTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 31)); // NOI18N
         profileTXT.setText("Students Information");
         profilePanel2.add(profileTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        nameTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         nameTXT.setText("Name:");
-        profilePanel2.add(nameTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
-        profilePanel2.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 150, -1));
-        profilePanel2.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 340, -1));
+        profilePanel2.add(nameTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 30));
+        profilePanel2.add(srcodeFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 110, -1));
+        profilePanel2.add(nameFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 270, -1));
 
         addressFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressFldActionPerformed(evt);
             }
         });
-        profilePanel2.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 340, -1));
-        profilePanel2.add(programFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 340, -1));
-        profilePanel2.add(emailFld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 340, -1));
+        profilePanel2.add(addressFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 340, -1));
+        profilePanel2.add(programFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 340, -1));
+        profilePanel2.add(emailFld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 340, -1));
+        profilePanel2.add(srcodeFld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 150, -1));
+        profilePanel2.add(srcodeFld2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 150, -1));
 
-        profilePanel.add(profilePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 640, 530));
+        srcodeTXT1.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        srcodeTXT1.setText("Sex:");
+        profilePanel2.add(srcodeTXT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, 30));
+
+        srcodeTXT2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        srcodeTXT2.setText("Year:");
+        profilePanel2.add(srcodeTXT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 30));
+
+        profilePanel.add(profilePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, 640, 520));
 
         addBtn.setBackground(new java.awt.Color(0, 255, 0));
         addBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
@@ -687,7 +701,11 @@ public class mainui extends javax.swing.JFrame {
     private javax.swing.JPanel settingsPanel;
     private javax.swing.JLabel settingsTXT;
     private javax.swing.JTextField srcodeFld;
+    private javax.swing.JTextField srcodeFld1;
+    private javax.swing.JTextField srcodeFld2;
     private javax.swing.JLabel srcodeTXT;
+    private javax.swing.JLabel srcodeTXT1;
+    private javax.swing.JLabel srcodeTXT2;
     private javax.swing.JLabel studentTXT;
     private javax.swing.JPanel studentsTotalPanel;
     private javax.swing.JLabel tneuLbl;
