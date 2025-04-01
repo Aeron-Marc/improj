@@ -59,6 +59,16 @@ import org.jfree.chart.*;
 import org.jfree.chart.plot.*;
 import org.jfree.data.general.*;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.AxisLocation;
+import org.jfree.chart.plot.*;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.*;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.axis.NumberTickUnit;
 
 
 
@@ -69,6 +79,9 @@ import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 public class mainui extends javax.swing.JFrame {
        private DefaultPieDataset dataset;
     private Timer timer;
+    
+      private DefaultCategoryDataset datasett;
+    private JLabel totalEnrolleesLabel; 
 
       private DefaultTableModel studentstablemodel;
         private DefaultTableModel curitablemodel;
@@ -89,6 +102,9 @@ private int currentCourseId;
     /**
      * Creates new form mainui
      */
+     //"23-73079", 1, "Dorina Cables", "Administrator"
+
+
     public mainui(String username, int userId, String fullname, String usertype) {
      initComponents();
    this.srcode = username;
@@ -96,6 +112,8 @@ private int currentCourseId;
     this.fullname = fullname;
     this.usertype = usertype;
     addPieChart(); 
+ 
+    addBarChart();
 
     welcome.setText(fullname + " (" + usertype + ")");   
     
@@ -165,7 +183,6 @@ private int currentCourseId;
         adminTabbedpane = new javax.swing.JTabbedPane();
         homePanel = new javax.swing.JPanel();
         coursesTotalPanel = new javax.swing.JPanel();
-        courseTXT = new javax.swing.JLabel();
         studentsTotalPanel = new javax.swing.JPanel();
         studentTXT = new javax.swing.JLabel();
         homeTXT = new javax.swing.JLabel();
@@ -331,12 +348,6 @@ private int currentCourseId;
 
         coursesTotalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         coursesTotalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        courseTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        courseTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        courseTXT.setText("Courses");
-        coursesTotalPanel.add(courseTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 160, 30));
-
         homePanel.add(coursesTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, 550, 410));
 
         studentsTotalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2136,6 +2147,79 @@ if (imgData != null && imgData.length > 0) {
         JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
+
+ private void addBarChart() {
+    datasett = new DefaultCategoryDataset();
+    JFreeChart chart = createBarChart(datasett);
+    ChartPanel chartPanel = new ChartPanel(chart);
+    chartPanel.setPreferredSize(new Dimension(316, 390));
+
+    coursesTotalPanel.setLayout(new BorderLayout());
+    coursesTotalPanel.add(chartPanel, BorderLayout.CENTER);
+    coursesTotalPanel.revalidate();
+    coursesTotalPanel.repaint();
+
+    // Start timer to update the chart every 5 seconds
+    timer = new Timer(5000, e -> updateBarChart());
+    timer.start();
+    updateBarChart(); // Initial chart update
+}
+
+
+  private JFreeChart createBarChart(DefaultCategoryDataset dataset) {
+    JFreeChart chart = ChartFactory.createBarChart(
+        "Total Enrollees per Department", 
+        "Department", 
+        "Total Enrollees", 
+        dataset, 
+        PlotOrientation.VERTICAL, 
+        true, true, false
+    );
+
+    CategoryPlot plot = (CategoryPlot) chart.getPlot();
+    plot.setRangeAxisLocation(AxisLocation.BOTTOM_OR_LEFT);
+
+    // Configure the Y-Axis (Total Enrollees)
+    NumberAxis yAxis = (NumberAxis) plot.getRangeAxis();
+    yAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits()); // Ensure whole numbers
+    yAxis.setAutoRangeIncludesZero(true);
+    yAxis.setTickUnit(new NumberTickUnit(10)); // Set increments of 10
+
+    // Customize bar colors
+    BarRenderer renderer = (BarRenderer) plot.getRenderer();
+    renderer.setSeriesPaint(0, Color.RED);
+
+    return chart;
+}
+
+private void updateBarChart() {
+    datasett.clear();
+    
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/semproj", "root", "");
+         Statement stmt = conn.createStatement()) {
+         
+        String query = "SELECT d.dep_name, COUNT(s.student_id) AS total_enrollees\n" +
+            "FROM departments d\n" +
+            "JOIN department_program dp ON d.department_id = dp.department_id\n" +
+            "JOIN track_program tp ON dp.program_id = tp.program_id\n" +
+            "JOIN student_track st ON tp.track_id = st.track_id\n" +
+            "JOIN students s ON st.student_id = s.student_id\n" +
+            "GROUP BY d.dep_name;";
+        
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            String departmentName = rs.getString("dep_name");
+            int departmentEnrollees = rs.getInt("total_enrollees");
+            datasett.addValue(departmentEnrollees, "Enrollees", departmentName);
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+
+
 private void loadProgramsAndTracks() {
     try {
         // Clear existing items
@@ -2388,7 +2472,6 @@ private void loadProgramsTracksAndDepartmentsinPanel() {
     private javax.swing.JComboBox<String> cmbUserType;
     private javax.swing.JComboBox<String> cmbYear;
     private javax.swing.JTextField corequisiteField;
-    private javax.swing.JLabel courseTXT;
     private javax.swing.JButton coursesBtb;
     private javax.swing.JPanel coursesPANEL;
     private javax.swing.JPanel coursesPanel;
