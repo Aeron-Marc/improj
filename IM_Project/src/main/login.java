@@ -4,17 +4,25 @@
  */
 package main;
 
+import main.Users;
+import main.DBConnector;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.awt.event.KeyEvent;
 /**
  *
  * @author leand
  */
 public class login extends javax.swing.JFrame {
+    Users users;
+    private String srcode;
 
     /**
      * Creates new form login
      */
     public login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -29,19 +37,20 @@ public class login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtsrcode = new javax.swing.JTextField();
         loginBtn = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        check = new javax.swing.JCheckBox();
         signupBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         loginTxt1 = new javax.swing.JLabel();
         batstateuTXT = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -55,24 +64,34 @@ public class login extends javax.swing.JFrame {
         jLabel2.setText("SR-Code:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtsrcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtsrcodeActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 330, -1));
+        txtsrcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtsrcodeKeyPressed(evt);
+            }
+        });
+        jPanel2.add(txtsrcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 330, -1));
 
         loginBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         loginBtn.setText("Login");
-        jPanel2.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
-
-        jCheckBox1.setText("Show Password");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, 20));
+        jPanel2.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
+
+        check.setText("Show Password");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, 20));
 
         signupBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         signupBtn.setForeground(new java.awt.Color(204, 0, 0));
@@ -87,7 +106,7 @@ public class login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
         jLabel3.setText("I don't have an account?");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 140, 30));
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 330, -1));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 330, -1));
 
         loginTxt1.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
         loginTxt1.setText("Please Login");
@@ -107,24 +126,88 @@ public class login extends javax.swing.JFrame {
         jLabel4.setText("The National Engineering University");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 230, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/background lam.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(124, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/logo bsu.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mary Jhezl\\Pictures\\batstateu-redspartan-e1602756308679.png")); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, 120));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtsrcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsrcodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtsrcodeActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+         if(check.isSelected()){
+            txtPassword.setEchoChar((char)0);
+        }else{
+            txtPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_checkActionPerformed
 
     private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_signupBtnActionPerformed
 
+    private void txtsrcodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsrcodeKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtPassword.requestFocus();
+        }
+    }//GEN-LAST:event_txtsrcodeKeyPressed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+         String srcode = txtsrcode.getText();
+    String password = new String(txtPassword.getPassword());
+
+    DBConnector db = new DBConnector();
+   
+    boolean isValid = db.validateLogin(srcode, password);
+    
+    if (isValid) {
+    int userId = db.getUserId(srcode);
+    String fullname = db.getFullname(srcode);
+    String usertype = db.getUserType(srcode); 
+    
+    LoginSession.setUserId(userId);
+    LoginSession.setSrcode(srcode);
+    LoginSession.setFullname(fullname);
+    LoginSession.setUsertype(usertype); 
+    
+    new mainui(LoginSession.getSrcode(), LoginSession.getUserId(), LoginSession.getFullname(), LoginSession.getUsertype()).setVisible(true);
+    this.dispose();
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Invalid username or password!", "Login Failed", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_loginBtnActionPerformed
+    public class LoginSession {
+    private static int userId;
+    private static String srcode;
+    private static String fullname;
+    private static String usertype;
+
+    public static void setUserId(int id) { userId = id; }
+    public static int getUserId() { return userId; }
+
+    public static void setSrcode(String code) { srcode = code; }
+    public static String getSrcode() { return srcode; }
+
+    public static void setFullname(String name) { fullname = name; }
+    public static String getFullname() { return fullname; }
+
+    public static void setUsertype(String type) { usertype = type; }
+    public static String getUsertype() { return usertype; }
+}
     /**
      * @param args the command line arguments
      */
@@ -161,18 +244,20 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
     private javax.swing.JLabel batstateuTXT;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox check;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton loginBtn;
     private javax.swing.JLabel loginTxt1;
     private javax.swing.JButton signupBtn;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtsrcode;
     // End of variables declaration//GEN-END:variables
 }
