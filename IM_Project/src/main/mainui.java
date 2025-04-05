@@ -55,6 +55,11 @@ import main.DBConnector;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import javax.swing.table.DefaultTableCellRenderer;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.*;
 import org.jfree.data.general.*;
@@ -96,7 +101,8 @@ private int selectedStudentID = -1; // Default value kapag walang napili
     private String fullname;
     private String usertype;
     // Declare this variable at the class level
-private int currentCourseId;
+    private int currentCourseId;
+    private int currentTrackId = -1;
 
 
     /**
@@ -161,6 +167,7 @@ private int currentCourseId;
         
 
         loadCurriculumTable();
+       setGradesCellRenderer();
     }
 
     /**
@@ -174,6 +181,7 @@ private int currentCourseId;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         adminPanel = new javax.swing.JPanel();
+        logoutBtn = new javax.swing.JButton();
         maroonbckgrnd = new javax.swing.JPanel();
         bsulogo = new javax.swing.JLabel();
         batstateuLbl1 = new javax.swing.JLabel();
@@ -269,8 +277,14 @@ private int currentCourseId;
         curriculumTXT = new javax.swing.JLabel();
         gradesPanel = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        setgrades = new javax.swing.JTable();
         gradesTXT = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        srsearch = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        updatedgrades = new javax.swing.JTable();
         reportsPanel = new javax.swing.JPanel();
         reportsTXT = new javax.swing.JLabel();
         usersPanel = new javax.swing.JPanel();
@@ -315,6 +329,15 @@ private int currentCourseId;
         adminPanel.setPreferredSize(new java.awt.Dimension(0, 0));
         adminPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        logoutBtn.setText("Logout");
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutBtnActionPerformed(evt);
+            }
+        });
+        adminPanel.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 140, 100, 30));
+
         maroonbckgrnd.setBackground(new java.awt.Color(128, 0, 0));
         maroonbckgrnd.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -358,7 +381,7 @@ private int currentCourseId;
         studentTXT.setText("Students");
         studentsTotalPanel.add(studentTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, 40));
 
-        homePanel.add(studentsTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 550, 410));
+        homePanel.add(studentsTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 550, 410));
 
         homeTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         homeTXT.setText("Home");
@@ -741,6 +764,11 @@ private int currentCourseId;
                 "Title 1"
             }
         ));
+        curriculumTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                curriculumTableMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(curriculumTable);
 
         curriculumPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 1240, 410));
@@ -751,6 +779,11 @@ private int currentCourseId;
 
         printblankBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         printblankBtn.setText("PRINT BLANK CURRICULUM");
+        printblankBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printblankBtnActionPerformed(evt);
+            }
+        });
         curriculumPanel.add(printblankBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 60, 270, -1));
 
         curriculumTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
@@ -762,24 +795,67 @@ private int currentCourseId;
         gradesPanel.setBackground(new java.awt.Color(204, 204, 204));
         gradesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        setgrades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Grades", "Course Code", "Course Name"
             }
         ));
-        jScrollPane7.setViewportView(jTable6);
+        setgrades.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setgradesMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(setgrades);
 
-        gradesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 1070, 510));
+        gradesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 620, 420));
 
         gradesTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
         gradesTXT.setText("Grades");
-        gradesPanel.add(gradesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        gradesPanel.add(gradesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel5.setText("Search:");
+        gradesPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, 20));
+
+        jButton6.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jButton6.setText("Go");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        gradesPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
+        gradesPanel.add(srsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 210, -1));
+
+        jButton7.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jButton7.setText("Generate");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        gradesPanel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, -1, -1));
+
+        updatedgrades.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Grades", "Course Code", "Course Name"
+            }
+        ));
+        jScrollPane6.setViewportView(updatedgrades);
+
+        gradesPanel.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, 590, -1));
 
         adminTabbedpane.addTab("tab7", gradesPanel);
 
@@ -1039,6 +1115,7 @@ private int currentCourseId;
         // TODO add your handling code here:
         new AddStudent().setVisible(true);
         updateChart();
+        updateBarChart();
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void addressFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFldActionPerformed
@@ -1178,6 +1255,7 @@ private int currentCourseId;
                     JOptionPane.showMessageDialog(this, "Student information updated successfully.");
                     loadStudentsToTable();
                     updateChart();
+                    updateBarChart();
                      txtsearchh.setText("");
          srcodeFld.setText("");  
         nameFld.setText("");    
@@ -1734,6 +1812,304 @@ private void fetchStudents(String searchQuery) {
 
     }//GEN-LAST:event_searchBtn1ActionPerformed
 
+    private void curriculumTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curriculumTableMouseClicked
+        int selectedRow = curriculumTable.getSelectedRow();
+            if (selectedRow != -1) {
+                String trackName = (String) curriculumTable.getValueAt(selectedRow, 3); // Assuming track_name is in column index 3
+
+                if (trackName != null && !trackName.isEmpty()) {
+                    try {
+                        Connection conn = DBConnector.getConnection();
+                        String sql = "SELECT track_id FROM tracks WHERE track_name = ?";
+                        PreparedStatement pstmt = conn.prepareStatement(sql);
+                        pstmt.setString(1, trackName);
+                        ResultSet rs = pstmt.executeQuery();
+
+                        if (rs.next()) {
+                            currentTrackId = rs.getInt("track_id"); // Store the track_id in the class variable
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Track not found.", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(this, "Error retrieving track ID: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "No track selected.", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+    }//GEN-LAST:event_curriculumTableMouseClicked
+
+    private void printblankBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printblankBtnActionPerformed
+        
+    }//GEN-LAST:event_printblankBtnActionPerformed
+    
+    private void setGradesCellRenderer() {
+        // Set custom cell renderer for the "Grades" column (index 0)
+        setgrades.getColumnModel().getColumn(0).setCellRenderer(new GradesCellRenderer());
+    }
+
+    private static class GradesCellRenderer extends DefaultTableCellRenderer {
+        @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        
+        if (value != null) {
+            String[] gradeValues = value.toString().split("/"); // Split grades by "/"
+            boolean hasFailingGrade = false;
+
+            // Check each grade to see if it's a failing grade
+            for (String gradeValue : gradeValues) {
+                try {
+                    if (gradeValue.equals("INC") || gradeValue.equals("5.00") || gradeValue.equals("DRP")) {
+                        hasFailingGrade = true;
+                        break;
+                    }
+                    if (Double.parseDouble(gradeValue) > 3.00) {
+                        hasFailingGrade = true;
+                        break;
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle non-numeric values gracefully by considering them non-passing
+                    hasFailingGrade = true;
+                    break;
+                }
+            }
+
+            // Change color based on the grade evaluation
+            if (hasFailingGrade) {
+                cell.setForeground(Color.RED);
+            } else {
+                cell.setForeground(Color.BLACK);
+            }
+        }
+        return cell;
+    }
+    }
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+          String srCode = srsearch.getText();
+        if (srCode.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter an SR Code.");
+            return;
+        }
+
+        try (Connection conn = DBConnector.getConnection();
+             PreparedStatement statement = conn.prepareStatement(
+                 "SELECT sc.sc_id, c.course_code, c.course_name, sc.grade " +
+                 "FROM student_course sc " +
+                 "JOIN students s ON sc.student_id = s.student_id " +
+                 "JOIN courses c ON sc.course_id = c.course_id " +
+                 "WHERE s.srcode = ?")) {
+            
+            statement.setString(1, srCode);
+            ResultSet resultSet = statement.executeQuery();
+
+            DefaultTableModel model = (DefaultTableModel) setgrades.getModel();
+            model.setRowCount(0); // Clear previous data
+
+            while (resultSet.next()) {
+                String courseCode = resultSet.getString("course_code");
+                String courseName = resultSet.getString("course_name");
+                String grade = resultSet.getString("grade");
+
+                model.addRow(new Object[]{grade, courseCode, courseName});
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error retrieving data: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) setgrades.getModel();
+    int rowCount = model.getRowCount();
+    if (rowCount == 0) {
+        JOptionPane.showMessageDialog(this, "No grades to generate.");
+        return;
+    }
+
+    try (Connection conn = DBConnector.getConnection()) {
+        conn.setAutoCommit(false); // Start transaction
+
+        String srCode = srsearch.getText();
+        int studentId = getStudentIdBySrCode(conn, srCode);
+
+        if (studentId == -1) {
+            JOptionPane.showMessageDialog(this, "No student found with the given SR code.");
+            return;
+        }
+
+        for (int i = 0; i < rowCount; i++) {
+            String courseCode = (String) model.getValueAt(i, 1);
+            int courseId = getCourseIdByCourseCode(conn, courseCode);
+
+            if (courseId == -1) {
+                JOptionPane.showMessageDialog(this, "No course found with course code: " + courseCode);
+                continue; // Skip this grade if no valid course is found
+            }
+
+            String grade = (String) model.getValueAt(i, 0);
+
+            // Check if this grade already exists
+            PreparedStatement checkStatement = conn.prepareStatement(
+                "SELECT sc_id, grade FROM student_course WHERE student_id = ? AND course_id = ?");
+            checkStatement.setInt(1, studentId);
+            checkStatement.setInt(2, courseId);
+            ResultSet existingGrade = checkStatement.executeQuery();
+
+            if (existingGrade.next()) {
+                // Update existing record
+                int scId = existingGrade.getInt("sc_id");
+                String existingGradeValue = existingGrade.getString("grade");
+
+                // Combine the existing grade with the new grade
+                String combinedGrade = combineGrades(existingGradeValue, grade);
+
+                PreparedStatement updateStatement = conn.prepareStatement(
+                    "UPDATE student_course SET grade = ?, status = 'Incomplete' WHERE sc_id = ?");
+                updateStatement.setString(1, combinedGrade);
+                updateStatement.setInt(2, scId);
+                updateStatement.executeUpdate();
+            } else {
+                // Insert new record
+                PreparedStatement insertStatement = conn.prepareStatement(
+                    "INSERT INTO student_course (student_id, course_id, grade, status) VALUES (?, ?, ?, 'Incomplete')");
+                insertStatement.setInt(1, studentId);
+                insertStatement.setInt(2, courseId);
+                insertStatement.setString(3, grade);
+                insertStatement.executeUpdate();
+            }
+        }
+
+        conn.commit(); // Commit transaction
+        JOptionPane.showMessageDialog(this, "Successfully updated/inserted grades for your student(s).");
+
+        // Refresh the updatedgrades table after insertion
+        updateUpdatedGradesTable(conn, studentId);
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error generating grades: " + e.getMessage());
+    }
+    }
+    
+    private String combineGrades(String existingGrade, String newGrade) {
+    Set<String> gradesSet = new HashSet<>(Arrays.asList(existingGrade.split("/")));
+    gradesSet.add(newGrade); // Add the new grade
+    return String.join("/", gradesSet); // Combine into a single string
+}
+// Method to update the 'updatedgrades' table with the latest inserted grades for the student
+    private void updateUpdatedGradesTable(Connection connection, int studentId) {
+        try {
+        String query = "SELECT c.course_code, c.course_name, sc.grade " +
+                       "FROM student_course sc " +
+                       "JOIN courses c ON sc.course_id = c.course_id " +
+                       "WHERE sc.student_id = ?";
+
+        PreparedStatement stmt = connection.prepareStatement(query);
+        stmt.setInt(1, studentId);
+        ResultSet rs = stmt.executeQuery();
+
+        DefaultTableModel updatedModel = (DefaultTableModel) updatedgrades.getModel();
+        updatedModel.setRowCount(0); // Clear any existing data
+
+        while (rs.next()) {
+            String courseCode = rs.getString("course_code");
+            String courseName = rs.getString("course_name");
+            String grade = rs.getString("grade");
+
+            updatedModel.addRow(new Object[]{grade, courseCode, courseName});
+        }
+
+        updatedgrades.setModel(updatedModel);
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error updating grades table: " + e.getMessage());
+    }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void setgradesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setgradesMouseClicked
+        // TODO add your handling code here:
+                                      
+        // TODO add your handling code here:
+          int row = setgrades.rowAtPoint(evt.getPoint());
+    int column = setgrades.columnAtPoint(evt.getPoint());
+
+    // Check if the clicked column is the "Grades" column
+    if (column == 0) {
+        // Create JComboBox with grade options
+        JComboBox<String> gradeComboBox = new JComboBox<>(new String[] {
+            "1.00", "1.25", "1.50", "1.75",
+            "2.00", "2.25", "2.50", "2.75",
+            "3.00", "INC", "5.00", "DRP"
+        });
+        gradeComboBox.setSelectedItem(setgrades.getValueAt(row, column)); // Set the selected item
+        
+        // Show the JComboBox in a dialog
+        int result = JOptionPane.showConfirmDialog(this, gradeComboBox, "Select Grade", JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_OPTION) {
+            String selectedGrade = (String) gradeComboBox.getSelectedItem();
+            DefaultTableModel model = (DefaultTableModel) setgrades.getModel(); // Retrieve the model
+
+            // Update the selected grade first
+            model.setValueAt(selectedGrade, row, column); // Update the table with the selected grade
+
+            // Check if the selected grade is a failing grade
+            if (selectedGrade.equals("INC") || selectedGrade.equals("5.00") || selectedGrade.equals("DRP")) {
+                // Duplicate the row with the selected grades
+                int newRow = model.getRowCount(); // Get the new row count
+                model.addRow(new Object[]{
+                    selectedGrade,
+                    model.getValueAt(row, 1), // Copy course code
+                    model.getValueAt(row, 2)  // Copy course name
+                });
+            }
+            setgrades.repaint(); // Repaint the table to reflect all changes
+        }
+    }
+    }//GEN-LAST:event_setgradesMouseClicked
+
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+       int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to log out?", "Logout Confirmation", JOptionPane.YES_NO_OPTION);
+
+if (confirm == JOptionPane.YES_OPTION) {
+    login log = new login();
+    this.dispose();
+    log.setVisible(true);
+    log.pack();
+    log.setLocationRelativeTo(null);
+}
+    }//GEN-LAST:event_logoutBtnActionPerformed
+   
+    private int getStudentIdBySrCode(Connection connection, String srCode) throws SQLException {
+        String query = "SELECT student_id FROM students WHERE srcode = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, srCode);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("student_id");
+            } else {
+                return -1; // Return -1 if no student is found
+            }
+        }
+    }
+
+    private int getCourseIdByCourseCode(Connection connection, String courseCode) throws SQLException {
+        String query = "SELECT course_id FROM courses WHERE course_code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, courseCode);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("course_id");
+            } else {
+                return -1; // Return -1 if no course is found
+            }
+        }
+    }
+    
+   
     private void clearFields() {
     txtSRCode.setText("");  // Clear the student code field
     txtPassword.setText("");  // Clear the password field
@@ -2503,19 +2879,23 @@ private void loadProgramsTracksAndDepartmentsinPanel() {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable6;
     private javax.swing.JLabel lblProfilePic;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel maroonbckgrnd;
     private javax.swing.JTextField nameFld;
     private javax.swing.JLabel nameTXT;
@@ -2546,6 +2926,7 @@ private void loadProgramsTracksAndDepartmentsinPanel() {
     private javax.swing.JLabel searchTxt;
     private javax.swing.JLabel searchTxt1;
     private javax.swing.JComboBox<String> sem;
+    private javax.swing.JTable setgrades;
     private javax.swing.JLabel settingsTXT;
     private javax.swing.JTextField srcodeFld;
     private javax.swing.JLabel srcodeTXT;
@@ -2562,6 +2943,7 @@ private void loadProgramsTracksAndDepartmentsinPanel() {
     private javax.swing.JLabel srcodeTXT6;
     private javax.swing.JLabel srcodeTXT7;
     private javax.swing.JLabel srcodeTXT9;
+    private javax.swing.JTextField srsearch;
     private javax.swing.JLabel studentTXT;
     private javax.swing.JPanel studentsTotalPanel;
     private javax.swing.JLabel studid;
@@ -2580,6 +2962,7 @@ private void loadProgramsTracksAndDepartmentsinPanel() {
     private javax.swing.JTextField txtsearchh;
     private javax.swing.JLabel typeTXT;
     private javax.swing.JTextField unitsField;
+    private javax.swing.JTable updatedgrades;
     private javax.swing.JButton usersBtn;
     private javax.swing.JPanel usersPanel;
     private javax.swing.JLabel welcome;

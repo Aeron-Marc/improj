@@ -40,8 +40,6 @@ public class login extends javax.swing.JFrame {
         txtsrcode = new javax.swing.JTextField();
         loginBtn = new javax.swing.JButton();
         check = new javax.swing.JCheckBox();
-        signupBtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         loginTxt1 = new javax.swing.JLabel();
         batstateuTXT = new javax.swing.JLabel();
@@ -61,7 +59,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jLabel2.setText("SR-Code:");
+        jLabel2.setText("Code:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         txtsrcode.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +81,7 @@ public class login extends javax.swing.JFrame {
                 loginBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
+        jPanel2.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
         check.setText("Show Password");
         check.addActionListener(new java.awt.event.ActionListener() {
@@ -92,27 +90,13 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, 20));
-
-        signupBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        signupBtn.setForeground(new java.awt.Color(204, 0, 0));
-        signupBtn.setText("Sign up");
-        signupBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupBtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(signupBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
-        jLabel3.setText("I don't have an account?");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 140, 30));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 330, -1));
 
         loginTxt1.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
         loginTxt1.setText("Please Login");
         jPanel2.add(loginTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 450, 560));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 450, 460));
 
         batstateuTXT.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         batstateuTXT.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,10 +136,6 @@ public class login extends javax.swing.JFrame {
             txtPassword.setEchoChar('*');
         }
     }//GEN-LAST:event_checkActionPerformed
-
-    private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_signupBtnActionPerformed
 
     private void txtsrcodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsrcodeKeyPressed
         // TODO add your handling code here:
@@ -248,7 +228,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JCheckBox check;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -256,7 +235,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginBtn;
     private javax.swing.JLabel loginTxt1;
-    private javax.swing.JButton signupBtn;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtsrcode;
     // End of variables declaration//GEN-END:variables
